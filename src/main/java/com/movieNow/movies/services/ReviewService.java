@@ -1,5 +1,10 @@
-package com.movieNow.movies;
+package com.movieNow.movies.services;
 
+import com.movieNow.movies.models.Movie;
+import com.movieNow.movies.models.Review;
+import com.movieNow.movies.models.User;
+import com.movieNow.movies.repository.ReviewRepository;
+import com.movieNow.movies.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

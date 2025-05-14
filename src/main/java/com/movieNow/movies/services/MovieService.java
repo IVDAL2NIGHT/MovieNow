@@ -1,6 +1,7 @@
-package com.movieNow.movies;
+package com.movieNow.movies.services;
 
-import org.bson.types.ObjectId;
+import com.movieNow.movies.models.Movie;
+import com.movieNow.movies.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
