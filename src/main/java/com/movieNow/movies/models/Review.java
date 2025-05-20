@@ -12,19 +12,18 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Review {
-
+    
     @Id
     private ObjectId id;
-
     private String body;
+    private String username;
 
-    @DocumentReference
+
     private User user;
-
-
-    public Review(String body,  String username) {
+    
+    public Review(String body, String username) {
         this.body = body;
+        this.username = username;
     }
 }
