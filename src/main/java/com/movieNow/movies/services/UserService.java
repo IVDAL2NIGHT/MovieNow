@@ -16,6 +16,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Clase de servicio responsable de gestionar funcionalidades relacionadas con usuarios.
+ * Proporciona métodos para registrar nuevos usuarios, autenticar usuarios existentes,
+ * y recuperar detalles de usuario basados en el nombre de usuario.
+
+ * Esta clase utiliza varias dependencias como `UserRepository` para operaciones de base de datos,
+ * `PasswordEncoder` para asegurar contraseñas, `AuthenticationManager` para autenticación de usuarios,
+ * y `TokenService` para generar tokens de autenticación.
+ */
+
 @Service
 @AllArgsConstructor
 public class UserService {
