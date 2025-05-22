@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * La clase MovieController proporciona endpoints REST para gestionar películas.
+ * Permite obtener todas las películas y recuperar los detalles de una película específica basada en su ID de IMDb.
+ */
 @RestController
 @RequestMapping("/api/v1/movies")
 public class MovieController {
@@ -30,4 +34,3 @@ public class MovieController {
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId),HttpStatus.OK);
     }
 }
-

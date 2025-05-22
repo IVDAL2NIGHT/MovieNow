@@ -20,6 +20,36 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * SecurityConfig es una clase de configuración que define la configuración de seguridad de la aplicación.
+ * Utiliza Spring Security para implementar autenticación, autorización y gestión de sesiones.
+ * Además, integra soporte para JWT (JSON Web Token) para manejar la autenticación sin estado.
+
+ * Esta clase proporciona las siguientes configuraciones:
+
+ * 1. Configuración de un bean SecurityFilterChain para deshabilitar la protección CSRF, definir reglas de
+ * autorización de solicitudes, gestionar políticas de creación de sesiones y habilitar el soporte para
+ * servidores de recursos usando JWT.
+
+ * 2. Configuración de un bean JwtDecoder para decodificar tokens JWT utilizando una clave secreta
+ * obtenida de JwtConfig.
+
+ * 3. Definición de un bean BCryptPasswordEncoder para codificar contraseñas.
+
+ * 4. Configuración de un bean AuthenticationProvider con integración DAO (Objeto de Acceso a Datos).
+ * Utiliza un UserDetailsService personalizado para cargar detalles del usuario y un BCryptPasswordEncoder
+ * para la comparación de contraseñas.
+
+ * 5. Configuración de un bean AuthenticationManager para autenticar usuarios utilizando el
+ * AuthenticationProvider definido.
+
+ * 6. Definición de un bean UserDetailsService para recuperar detalles del usuario desde un repositorio
+ * MongoDB (UserRepository) dado un nombre de usuario. Si no se encuentra el usuario, lanza una
+ * UsernameNotFoundException.
+
+ * Esta configuración asegura un mecanismo de seguridad sin estado, seguro y modular para la aplicación.
+ */
+
 @Configuration
 @AllArgsConstructor
 public class SecurityConfig {

@@ -15,6 +15,27 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Clase de servicio responsable de manejar funcionalidades relacionadas con la generación de JWT (JSON Web Token).
+ * Utiliza configuraciones de JwtConfig y gestiona la creación de tokens para usuarios autenticados.
+
+ * Responsabilidades:
+ * - Generar un JWT utilizando la información de un usuario autenticado.
+ * - Obtener y utilizar la clave secreta y el algoritmo de firma desde JwtConfig para firmar el token.
+ * - Incluir claims como nombre de usuario, correo electrónico, roles e ID de usuario en la carga útil del token.
+
+ * Se crea un SignedJWT interno con un encabezado, claims y firma.
+ * El JWT resultante se serializa y se devuelve como una cadena de texto.
+
+ * Dependencias:
+ * - JwtConfig: Proporciona el algoritmo y la clave secreta para crear JWTs firmados.
+ * - User: Representa la información del usuario autenticado, como nombre de usuario, correo electrónico e ID.
+ * - Authentication: Proporcionado por Spring Security para recuperar detalles del usuario actualmente autenticado.
+
+ * Lanza:
+ * - RuntimeException si hay un error durante la firma del JWT.
+ */
+
 @Service
 @AllArgsConstructor
 public class TokenService {
