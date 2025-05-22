@@ -1,5 +1,6 @@
 package com.movieNow.movies.controllers;
 
+import com.movieNow.movies.models.Review;
 import com.movieNow.movies.services.MovieService;
 import com.movieNow.movies.models.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +34,10 @@ public class MovieController {
     public ResponseEntity<java.util.Optional<Movie>> gettingSingleMovie(@PathVariable String imdbId) {
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId),HttpStatus.OK);
     }
+
+    @GetMapping("/{imdbId}/reviews")
+    public ResponseEntity<List<Review>> getMovieReviews(@PathVariable String imdbId) {
+        return new ResponseEntity<>(movieService.getAllMovieReviews(imdbId), HttpStatus.OK);
+    }
+
 }
