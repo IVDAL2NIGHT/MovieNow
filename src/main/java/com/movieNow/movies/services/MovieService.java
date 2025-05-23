@@ -1,6 +1,7 @@
 package com.movieNow.movies.services;
 
 import com.movieNow.movies.models.Movie;
+import com.movieNow.movies.models.Review;
 import com.movieNow.movies.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,11 @@ public class MovieService {
 
     public Optional<Movie> singleMovie(String imdbId){
         return movieRepository.findByImdbId(imdbId);
+    }
+
+    public List<Review> getAllMovieReviews(String imdbId) {
+        Optional<Movie> movie = movieRepository.findByImdbId(imdbId);
+        return movie.map(Movie::getReviews).orElse(List.of());
     }
 }
 
