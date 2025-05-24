@@ -1,1 +1,1 @@
-Principal group branch
+Principal group branch and app description
