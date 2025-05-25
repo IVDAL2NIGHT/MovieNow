@@ -39,8 +39,6 @@ public class Review {
     private ObjectId id;
     private String body;
     private String username;
-
-
     private User user;
     
     public Review(String body, String username) {

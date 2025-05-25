@@ -23,7 +23,7 @@ import java.io.IOException;
 
  * Endpoints:
  * - POST /signup: Maneja el registro de usuarios creando un nuevo usuario en el sistema.
- * - POST /signin: Autentica un usuario existente, devolviendo una respuesta de inicio de sesión con un token tras una autenticación exitosa.
+ * - POST /signing: Autentica un usuario existente, devolviendo una respuesta de inicio de sesión con un token tras una autenticación exitosa.
 
  * Dependencias:
  * - UserService: La clase de servicio responsable de manejar la lógica de negocio relacionada con usuarios, como el registro y la autenticación.
@@ -46,7 +46,7 @@ public class UserController {
         return ResponseEntity.ok(registeredUser);
     }
 
-    @PostMapping("/signin")
+    @PostMapping("/signing")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginDto loginUserDto) {
         var loginResponse = userService.authenticate(loginUserDto);
         return ResponseEntity.ok(loginResponse);
