@@ -46,7 +46,7 @@ public class UserController {
         return ResponseEntity.ok(registeredUser);
     }
 
-    @PostMapping("/signing")
+    @PostMapping("/signin")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginDto loginUserDto) {
         var loginResponse = userService.authenticate(loginUserDto);
         return ResponseEntity.ok(loginResponse);
