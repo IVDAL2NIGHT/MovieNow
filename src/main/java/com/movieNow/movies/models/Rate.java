@@ -29,7 +29,4 @@ public class Rate {
         this.username = username;
         this.rate = rate;
     }
-
-
-
 }

@@ -19,22 +19,22 @@ import java.util.Optional;
  * La clase ReviewService proporciona la lógica de negocio para manejar operaciones relacionadas con reseñas.
  * Este servicio interactúa con ReviewRepository, UserRepository y MongoTemplate
  * para realizar operaciones como crear reseñas y vincularlas a películas y usuarios.
- * <p>
+ *
  * Responsabilidades:
  * - Crear y persistir reseñas para películas.
  * - Manejar la validación de usuarios y asociar reseñas con usuarios existentes.
  * - Actualizar registros de películas para incluir las reseñas asociadas.
- * <p>
+ *
  * Dependencias:
  * - ReviewRepository: Maneja operaciones CRUD para reseñas almacenadas en la base de datos.
  * - UserRepository: Valida usuarios y recupera información de usuario.
  * - MongoTemplate: Facilita operaciones complejas de MongoDB como actualizar documentos con reseñas incrustadas.
- * <p>
+ *
  * Métodos:
  * - createReview(String reviewBody, String imdbId, String username):
  * Crea una reseña, la asocia con un usuario y una película, y actualiza el
  * documento de película relacionado en la base de datos.
- * <p>
+ *
  * Excepciones:
  * - Lanza RuntimeException si el usuario no se encuentra.
  * - Lanza RuntimeException si la película no se encuentra.

@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1/movieList")
 public class MovieListController {
-    
+
     @Autowired
     private MovieListService movieListService;
 
@@ -21,15 +21,15 @@ public class MovieListController {
         String username = payload.get("username");
         String title = payload.get("title");
         String description = payload.get("description");
-        
+
         // Validación básica
         if (username == null || title == null || description == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         return new ResponseEntity<>(
-            movieListService.createMovieList(username, title, description),
-            HttpStatus.CREATED
+                movieListService.createMovieList(username, title, description),
+                HttpStatus.CREATED
         );
     }
 

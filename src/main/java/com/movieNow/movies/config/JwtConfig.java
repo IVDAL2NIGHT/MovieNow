@@ -13,7 +13,7 @@ import javax.crypto.SecretKey;
  * relacionadas con JWT, como la clave secreta, el tiempo de expiración y el algoritmo.
  * Proporciona métodos para obtener una SecretKey y JWSAlgorithm basados en la configuración
  * cargada.
-
+ *
  * La clave secreta y el algoritmo configurados se utilizan en varias partes de la
  * aplicación para firmar y verificar tokens JWT, asegurando una comunicación segura.
  */
@@ -31,7 +31,7 @@ public class JwtConfig {
     private String algorithm;
 
     public SecretKey getSecretKey() {
-        var key =new OctetSequenceKey.Builder(secretKey.getBytes())
+        var key = new OctetSequenceKey.Builder(secretKey.getBytes())
                 .algorithm(new JWSAlgorithm(algorithm))
                 .build();
         return key.toSecretKey();

@@ -6,7 +6,8 @@ public record MovieRatingDTO(
         String rates,
         double averageRating,
         int totalRatings
-) {}
+) {
+}
 
 
 

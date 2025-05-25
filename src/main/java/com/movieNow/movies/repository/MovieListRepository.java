@@ -1,6 +1,5 @@
 package com.movieNow.movies.repository;
 
-import com.movieNow.movies.models.Movie;
 import com.movieNow.movies.models.MovieList;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
