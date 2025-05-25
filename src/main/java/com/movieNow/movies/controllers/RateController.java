@@ -31,5 +31,7 @@ public class RateController {
         return ResponseEntity.ok(rate);
     }
 }
-record RateRequest(String imdbId, String username, int rating) {}
+
+record RateRequest(String imdbId, String username, int rating) {
+}
 

@@ -15,16 +15,16 @@ import java.io.IOException;
  * UserController es un controlador REST que proporciona endpoints de API para la autenticación y registro de usuarios.
  * Esta clase maneja las peticiones HTTP relacionadas con el registro e inicio de sesión de usuarios, delegando la lógica
  * de negocio a la clase UserService.
-
+ *
  * Anotaciones:
  * - @RestController: Indica que esta clase es un controlador REST para manejar peticiones HTTP y devolver respuestas HTTP.
  * - @RequestMapping("/api/v1/user"): Especifica la ruta base para todos los endpoints en este controlador.
  * - @AllArgsConstructor: Genera un constructor con todos los argumentos para las dependencias de la clase.
-
+ *
  * Endpoints:
  * - POST /signup: Maneja el registro de usuarios creando un nuevo usuario en el sistema.
- * - POST /signin: Autentica un usuario existente, devolviendo una respuesta de inicio de sesión con un token tras una autenticación exitosa.
-
+ * - POST /signing: Autentica un usuario existente, devolviendo una respuesta de inicio de sesión con un token tras una autenticación exitosa.
+ *
  * Dependencias:
  * - UserService: La clase de servicio responsable de manejar la lógica de negocio relacionada con usuarios, como el registro y la autenticación.
  */
@@ -46,7 +46,7 @@ public class UserController {
         return ResponseEntity.ok(registeredUser);
     }
 
-    @PostMapping("/signin")
+    @PostMapping("/signing")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginDto loginUserDto) {
         var loginResponse = userService.authenticate(loginUserDto);
         return ResponseEntity.ok(loginResponse);
