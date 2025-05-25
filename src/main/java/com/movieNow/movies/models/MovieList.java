@@ -7,26 +7,27 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "rates")
+import java.util.ArrayList;
+import java.util.List;
+
+@Document(collection = "movieLists")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Rate {
+public class MovieList {
 
     @Id
     private ObjectId id;
-    private String imdbId;
-    private String Title;
+    private String title;
+    private String description;
     private String username;
-    private int rate;
-
     private User user;
+    private List<Movie> movies;
 
-    public Rate(String imdbId, String title, String username, int rate) {
-        this.imdbId = imdbId;
-        Title = title;
+    public MovieList(String username, String title, String description) {
         this.username = username;
-        this.rate = rate;
+        this.title = title;
+        this.description = description;
+        this.movies = new ArrayList<>();
     }
 }

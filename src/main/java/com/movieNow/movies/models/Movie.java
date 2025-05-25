@@ -16,13 +16,13 @@ import java.util.List;
  * Esta clase sirve como modelo de datos para películas con campos que contienen
  * metadatos sobre una película, como título, información de lanzamiento, géneros, trailers,
  * pósters y reseñas relacionadas.
-
+ *
  * Anotaciones:
  * - @Document: Mapea esta clase a la colección "movies" en la base de datos.
  * - @Data: Genera automáticamente los métodos getter, setter, equals, hashCode y toString.
  * - @AllArgsConstructor: Genera un constructor con todos los campos como parámetros.
  * - @NoArgsConstructor: Genera un constructor sin argumentos.
-
+ *
  * Campos:
  * - id: Identificador único para el documento de la película.
  * - imdbId: Identificador externo de la película asociado con IMDb.
@@ -64,7 +64,6 @@ public class Movie {
     private List<Rate> rates;
 
     private double averageRating;
-
 
 
 }

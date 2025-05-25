@@ -36,7 +36,7 @@ public class MovieController {
 
     @GetMapping("/{imdbId}")
     public ResponseEntity<java.util.Optional<Movie>> gettingSingleMovie(@PathVariable String imdbId) {
-        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId),HttpStatus.OK);
+        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId), HttpStatus.OK);
     }
 
     @GetMapping("/{imdbId}/reviews")
@@ -55,13 +55,6 @@ public class MovieController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
-
-
-
-
-
-
 
 
 }
