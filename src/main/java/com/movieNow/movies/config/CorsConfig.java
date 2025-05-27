@@ -18,6 +18,7 @@ public class CorsConfig {
                         .allowedOrigins("http://localhost:3000") // origen permitido
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
+
             }
         };
     }
